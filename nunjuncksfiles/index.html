@@ -1,0 +1,131 @@
+<!DOCTYPE html> <!-- informa a versão html pro navegador-->
+<html>
+    <!-- refatorar codigo , melhorrar codigo ja pronto , separando os codigos por arquivo-->
+    <head> <!--Responsavel por receber configurações da pagina-->
+        <meta charset=UTF-8"> <!-- corrige acentuações-->
+        <title>Casa Criativa</title> <!-- muda o nome da pagina-->
+     <!-- para importart um arquivo no html usa <link rel="stylesheet" href="style.css-->
+    
+     <link rel="stylesheet" href="/style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap"
+         rel="stylesheet">   <!-- <style> </style> Serve para colocar estilos css, sempre bota dentro do head--> 
+         
+        
+    </head>
+    
+    
+    
+    
+    <body> <!-- Pode colocar muitos textos no problem-->
+        <!-- pai = caixão , filhos = caixinhas , tudo q tiver dentro
+        do caixão e um filho-->
+         
+        <div id="container"> <!-- cria uma caixona, so óde um id por elemento-->
+            <section id="intro">
+                <header> <!-- caixa do cabeçalho-->
+                    <a href="/">
+                        <img src="/logo.png" alt=" Imagem da Logomarca">
+                    </a>
+                </header>
+                
+                <main>
+                    <p>
+                        Ficar em casa em períodos longos, não deve ser nada fácil.
+                    </p>
+            
+                    <p>
+                        Iremos catalogar ideias, <strong> brincadeiras, jogos, filmes, livros,cursos, dicas </strong>  e tudo que for necessário para tornar esse momento mais interessante.
+                    </p>
+            
+                    <p>
+                        Comece clicando em ver ideias para ver as  ideias cadastradas e contribua adicioando a sua ideia.
+                    </p> <!-- tag de paragrafo , so recebe um paragrafo-->
+                  <!-- tag strong = deixa em negrito-->
+                </main> <!--Caixa do conteudo principal-->
+                
+                <section id="buttons">
+                    <button onclick="onOff()">+ Adicionar Ideia </button>
+                    <a href="/ideais" class="button"> Ver Ideias</a>
+                </section>
+
+                <footer> 
+                    Com ❤ <a href="http://rocketseat.com.br" target="_blank"> Rocketseat</a>
+                </footer> <!-- caixa de rodape-->
+
+
+            </section> <!-- è a priemira caixa(caixinha) da div -->
+
+            <section id="ideas">
+                {%for idea in ideas%}
+                <div class="idea">
+                     <img src="{{idea.img}}" alt="Imagem do {{idea.title}}">
+                     <div class="content">
+                         <h3> {{idea.title}} </h3>
+                         <p>{{idea.category}}</p>
+                         <div class="description">
+                             {{idea.description}}
+                         </div>
+                         <a href=" {{idea.url}}"target>Ir para a Ideia</a>
+                     </div> <!-- content = conteudo-->
+                </div> 
+                
+                {%endfor%}
+                
+               <!-- a classe pode reusada em varias caixass-->
+            <!-- para pegar icones acesse flaticon-->
+            
+          
+            </section>
+        </div>
+
+            <!-- Modal e tipo um pop up-->
+        <!-- input precisa dos atributos type e name , para informar
+        o tipo da informação e o nome do input
+            Label serve para dar o nome/descrição do input ex: Titulo da ideia
+    -->
+
+    <div id="modal" class="hide">
+        <!--id tem mais força q classe, pode somar as forças -->
+        <div class="content">
+            <h1>Nova Ideia</h1>
+      
+            <form action="">
+                <div class="input-wrapper">
+      
+                    <label for="title"> Título da Ideia</label>
+                    <input type="text" name="title">
+                </div>
+      
+                <div class="input-wrapper">
+      
+                    <label for="category"> Categoria</label>
+                    <input type="text" name="category">
+                </div>
+      
+                <div class="input-wrapper">
+                    <label for="image"> Link da imagem </label>
+                    <input type="url" name="image">
+                </div>
+      
+                <div class="input-wrapper">
+                    <label for="description"> Digite uma descrição para essa ideia</label>
+                    <textarea name="description" cols="30" rows="10">
+      
+                    </textarea>
+                </div>
+      
+                <div class="input-wrapper">
+                    <label for="link"> Link da ideia </label>
+                    <input type="url" name="link">
+                </div>
+                <a href="#" onclick="onOff()">Voltar</a>
+                    <button>Salvar</button>
+            </form>
+        </div>
+      
+      </div>
+      
+   
+        <script src="/script.js" ></script>
+    </body>
+</html>

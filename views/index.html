@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section id="intro">
+    <header> <!-- caixa do cabeçalho-->
+        <a href="/">
+            <img src="/logos.png" alt=" Imagem da Logomarca">
+        </a>
+    </header>
+    
+    <main>
+        <p>
+            Ficar em casa em períodos longos, não deve ser nada fácil.
+        </p>
+
+        <p>
+            Iremos catalogar ideias, <strong> brincadeiras, jogos, filmes, livros,cursos, dicas </strong>  e tudo que for necessário para tornar esse momento mais interessante.
+        </p>
+
+        <p>
+            Comece clicando em ver ideias para ver as  ideias cadastradas e contribua adicioando a sua ideia.
+        </p> <!-- tag de paragrafo , so recebe um paragrafo-->
+      <!-- tag strong = deixa em negrito-->
+    </main> <!--Caixa do conteudo principal-->
+    
+    <section id="buttons">
+        <button onclick="onOff()">+ Adicionar Ideia </button>
+        <a href="/ideias" class="button"> Ver Ideias</a>
+    </section>
+
+    <footer> 
+        Com ❤ <a href="http://rocketseat.com.br" target="_blank"> Rocketseat</a>
+    </footer> <!-- caixa de rodape-->
+
+
+</section> <!-- è a priemira caixa(caixinha) da div -->
+
+<section id="ideas">
+    {%for idea in ideas%}
+    <div class="idea">
+         <img src="{{idea.image}}" alt="Imagem do {{idea.title}}">
+         <div class="content">
+             <h3> {{idea.title}} </h3>
+             <p>{{idea.category}}</p>
+             <div class="description">
+                 {{idea.description}}
+             </div>
+             <a href=" {{idea.link}}"target>Ir para a Ideia</a>
+             <button action="/ideias/:id"> Remover Ideia </button>
+         </div> <!-- content = conteudo-->
+    </div> 
+    
+    {%endfor%}
+    
+   <!-- a classe pode reusada em varias caixass-->
+<!-- para pegar icones acesse flaticon-->
+
+
+</section>
+{% endblock %}

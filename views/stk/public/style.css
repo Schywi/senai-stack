@@ -1,0 +1,409 @@
+/* CSS = cascating style sheet 
+A maneira de acceso e tipo cascata , vc pode acessar tags dentro de tags
+ex: body img {}
+
+text-decoration = sublinhado,italico etc
+
+*/
+
+/*
+ No CSS tudo e BOX , dentro tem conteudo da caixa que pode ser texto ou imagem
+ modelo de xaica: 
+ BOX: 
+ largura
+ espaçamento
+ preenchimento
+ bordas
+ posicionamento  dos elementos 
+
+ margin : espaçamento da caixa
+ border: bordas da caixa
+ padding: preenchimento interno dela
+ conteudo da caixa
+
+ Posicionamento padrão co html e css , uma coisa de baixo da outra
+
+ tipos de display: display: blocl ocupa toda a linha e faz uma quebra de linha 
+, o proximo elemento fica abaixo dessa linha 
+
+display: inline block faz um elemtn oficar do lado do outro 
+display = apresentação
+
+O google da valor a semantica forma ocm que seu html ta escrito para mostrar sites
+
+Organize tudo em caixas
+#e5e5e5
+o navegador ja tem amrgin de 8px
+*/
+/*
+#e5e5e5
+#e6ecf0
+
+*/
+/*Estilos Globais*/
+body {
+    background: #e6ecf0 ; 
+    color:fixed #25282B; 
+     /* alinha o texto*/
+     font-family: 'Montserrat', sans-serif;
+
+    margin: 0;
+}   
+
+body.hideScroll {
+    overflow: hidden
+}
+
+a {
+    color: #ff5E84;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*Css globais ficam vem primeiro e css especificos vem dps*/
+
+a:hover {  
+    text-decoration: underline;
+}
+
+p, .description {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1; 
+}
+
+#modal.hide {
+    opacity: 0; /* display não aceita transição*/
+    visibility: hidden;
+   
+}
+
+
+
+#container {
+    width: 80%;
+    max-width: 980px;
+    margin: 40px auto; 
+
+    display: flex; /* cada elemento um do lado do outro*/
+}  /* é padrão o texto finar no meio , o container e o xaixão */
+/* site baum de css tricks*/
+/*
+ é um seletor, faz referencia a uma tag, dentro de {} bota as propriedades
+na hora de fazer o css faz conforme as caixas , da maior pra menor , quanto mais profunda a cascata maior e a força
+ex: body container >> #container
+
+dica: faça o site bonitinho no figma, monte ele lá e dps de montalo
+vc faz a programação 
+
+O html preenche automaticamente o q vc não escolher*/
+
+
+#intro {
+    width: 300px;
+    margin-right: 64px;
+}
+
+main{ /*agrupar propriedades margin : cima baixo esquerda direta
+    ou cima/baixo esuqerda/direita*/
+    margin: 32px 0;
+}
+#buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 32px;
+}
+
+button {
+    border:none ; 
+    font-weight: bold; 
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color:  #ff5E84; 
+    background: none;
+
+    cursor: pointer; 
+
+    outline: none; 
+}
+
+button:hover {
+    text-decoration:  underline;
+}
+
+
+.button {
+    color: white; 
+    background: #ff5E84;
+
+    width: 150px; 
+    height: 40px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+    
+    border-radius: 8px;
+
+    box-shadow: 0px 8px 16px rgba(255, 0, 92, 0.16);
+    
+}
+
+    /* para cessar classes ".nomedaclasse*, pode se repetir classes */
+/* identificadores, chama "#nomedoid, não pode usar o msm em varias tags*/
+
+.button:hover {
+    background-color: #0984e3;
+    text-decoration:  none;
+
+}
+
+/*Estilos Padrão*/
+
+footer { /* agrupar caixas "," ambos recebem a msm propriedade*/
+    text-align: center;
+    font-weight: 400; 
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    
+    color: #777;
+}
+footer a {
+    text-decoration: none;
+    color: #25282B;
+    opacity: 0.8;
+}
+
+footer a:hover {
+    color: #ff5E84;
+    font-weight: bold;
+}
+
+/*-8px = sombra vai pra dentro */
+
+.idea {
+    display: flex;
+    background-color: #FFF;
+    box-shadow: 0 4px 16px -8px rgba(1,1,1,0.16);
+    border-radius: 8px;
+
+    padding: 32px;
+    margin-bottom: 32px;
+}
+
+.idea img{
+    width: 60px;
+    height: 60px;
+    margin-right: 32px;
+}
+
+.idea h3 {
+    margin: 0; 
+}
+
+.idea p {
+    margin: 8px 0;
+    color: #777;
+}
+.idea .description {
+    margin: 16px 0;
+}
+
+/*modal*/
+
+#modal{
+    background: #ff5E84;
+
+    position: fixed; /* essa caixa vai ficar acima do resto*/
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+/*
+    width: 100vw; vw = ocupa toda a largura , vh = ocupa full altura
+    height: 200vh;
+*/
+    display: flex;
+    justify-content: center; 
+}
+
+
+#modal.addScroll {
+    overflow: auto;
+}
+
+
+
+
+#modal .content{
+    margin-top: 5%;
+    color: white; 
+}
+
+#modal .content h1{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#modal form{
+    width: 80%;
+    max-width: 800px;
+
+    margin: 0 auto 15%;
+    /* display: flex dexa tudo do lado do outro ou embaixo, 
+    grid: dexa cada um do lado do outro, vc tem colunas e linhas
+    Por padrão largura de 100% + padding estrapola o limite da caixa
+    usa border box para limitar isso
+    1fr = fração*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.content form div:nth-child(3),
+.content form div:nth-child(4),
+.content form div:nth-child(5) {
+    grid-column: span 2;
+} /*ele pega o filho do formulario da posição do numero dado, span = expande
+para as duas colunas*/
+
+form input , form textarea{
+    width: 100%;
+    padding: 12px; 
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: 1px solid rgba(141, 25, 52, 0.5);
+    outline: none;
+    font-size: 16px;
+
+}
+
+
+form label{
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0.8px;
+}
+form a {
+    width: 150px;
+    height: 40px;
+
+    background-color: #ffffff22;
+    color: white; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;/*é por causa do display flex*/
+    
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: 0.2s;
+    align-self: end; 
+    /* justify-self: ; e por causa do grid */ 
+}
+
+    
+form a:hover {
+    background-color: #FFF;
+    color: #ff5E84; 
+    text-decoration: none;
+}
+
+form button {
+    background: white;
+    width: 150px;
+    height: 40px;
+    border-radius: 6px;
+    cursor: pointer;
+    grid-column: 2;
+    justify-self: end;
+    transition: 0.2s;
+}
+
+form button:hover {
+    background-color: #0984e3;
+    color: white; 
+    text-decoration: none;
+}
+/* Idea.html */
+
+#page-ideas #container {
+    display: block;
+}
+
+#page-ideas header { 
+    display: flex;
+    justify-content:  space-between;
+}
+
+
+#page-ideas  nav {
+    display: flex;
+    align-items: center;
+}
+
+#page-ideas  nav li {
+    list-style-type:  none;
+    margin-right:  16px;
+}
+
+#page-ideas  nav li a {
+  color: #25282B;
+}
+
+#page-ideas  nav li a.button {
+    color: white;
+  }
+
+#page-ideas  nav li:last-child {
+    margin: 0; 
+
+}
+
+/* Para pega ro ultimo filho ou tem no css> 
+usa : :last-child*/
+
+
+
+section#title {
+    text-align: center;
+    margin: 64px 0;
+}
+
+section#title p {
+    opacity: 0.7;
+    margin: 0;
+}
+
+section#title h1 {
+    margin: 0px;
+    font-size: 28px;
+}
+
+section#ideias {
+    display: grid; 
+    grid-template-columns: 1fr 1fr ;
+    gap: 20px;
+}
+
+
+section#ideias .idea {
+   margin: 0px;
+
+}
+
+section#title, 
+section#ideias,
+footer { 
+    margin-top: 64px; 
+}
+
+
+
+
+

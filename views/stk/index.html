@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+  <body>
+    <header id="main-header">  
+      <div class="content"> <!-- Precisa arrumar o css do main header pq dodessa classe-->
+
+       
+    
+        <img src="./public/logos.png" alt="Imagem da logo">
+        <nav>
+          <ul>
+            <li> <img src="./images/home.svg" alt="Home"> Home</li>
+            <li><img src="./images/notification.svg" alt="Notifications"> Notifications</li>
+            <li><img src="./images/message.svg" alt="Message"> Messages</li>
+          </ul>
+        </nav>
+
+      </div>
+    </header>
+      <div class="banner">
+        <h1> Bootcamp SenaiStack</h1>
+      </div>
+    
+
+<div class="wrapper-content content">
+ 
+
+  <aside class="widgets">
+    <div class="widget follow">
+      <div class="title">
+       <strong>Canais Recomendados</strong>
+      </div>
+      <ul>
+        <li>
+            <div class="profile">
+              <img src="./images/rocks.jpg" alt="Avatar">
+              <div class="info">
+                <strong>Rocketseat <span>@rocketseat</span></strong>
+                <button ><a href="https://www.youtube.com/channel/UCSfwM5u0Kce6Cce8_S72olg">Follow</a></button>
+                
+              </div>
+            </div>
+          <a href="">x</a>
+        </li>
+      
+        <li>
+            <div class="profile">
+              <img src="https://yt3.ggpht.com/a/AATXAJxpQzXaz5gar8MXTTanUGvDI9UrI7xgLN_Elw=s100-c-k-c0xffffffff-no-rj-mo" alt="Avatar">
+              <div class="info">
+                <strong>Código Fonte TV <span>@codigo_fonte_tv</span></strong>
+                <button><a href="https://www.youtube.com/user/codigofontetv">Follow</a></button>
+                
+              </div>
+            </div>
+          <a href="">x</a>
+        </li>
+    
+        <li class="last">
+            <div class="profile">
+              <img src="https://yt3.ggpht.com/a/AATXAJyi6syFivU5JTxaAtUDUFD829HiQmcX2iv_5g=s100-c-k-c0xffffffff-no-rj-mo" alt="Avatar">
+              <div class="info">
+                <strong>Filipe Deschamps <span>@filipe_deschamps</span></strong>
+                <button><a href="https://www.youtube.com/channel/UCU5JicSrEM5A63jkJ2QvGYw">Follow</a></button>
+              </div>
+            </div>
+          <a href="">x</a>
+        </li>
+
+        <li class="last">
+          <div class="profile">
+            <img src="https://yt3.ggpht.com/a/AATXAJw-bX2VxsG-v9rnFdx-3T9YxbZqshX2QCWghw=s100-c-k-c0xffffffff-no-rj-mo" alt="Avatar">
+            <div class="info">
+              <strong>Fabio Akita <span>@fabio_akita</span></strong>
+              <button><a href="https://www.youtube.com/channel/UCib793mnUOhWymCh2VJKplQ">Follow</a></button>
+            </div>
+          </div>
+        <a href="">x</a>
+      </li>
+      </ul>
+
+      
+    </div>
+    <div class="widget trends">
+
+    </div>
+</aside>
+
+  <section class="timeline">
+      <nav>
+        <a href="" class="active">Plano de estudos</a>
+
+      </nav>
+      <ul class="tweets">
+        <li>
+          <img src="./images/rocks.jpg" alt="Avatar">
+          <div class="info">
+            <strong>Semana 1 <span>@Exibit</span></strong>
+            <p> Começaremos a nossa jornada aprendendo Javascript , HTML e CSS  , para 
+              acesar o conteudo clique nos quadrados abaixo: 
+            </p>
+            <aside class="profile"> 
+
+              <div class="widget images">
+              
+                <ul>
+                
+                    <li>
+                    <a href="https://www.youtube.com/watch?v=cprMYC8PCVY&list=PL85ITvJ7FLohGTWaE_p0J6B-TLmQbN4ka" target="_blank" >
+                      <img src="data:image/png;base64,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" alt="Workshop dev" > </a>
+                </li>
+                  <li> <a href="https://www.youtube.com/watch?v=cprMYC8PCVY&list=PL85ITvJ7FLohGTWaE_p0J6B-TLmQbN4ka" target="_blank" >
+                    <img src="data:image/png;base64,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" alt="Workshop dev" > </a>
+            </li>
+                
+                </ul>
+              </div>
+        
+          </aside>
+          <div class="links">
+           <a href=""><img src="./images/comments.svg" alt="Comentarios">3</a>
+           <a href=""><img src="./images/retweet.svg" alt="Retweet">4</a>
+           <a href=""><img src="./images/like.svg" alt="Likes">5</a>
+          </div>
+        </div>
+        </li>
+        <li>
+          <img src="./images/rocks.jpg" alt="Avatar">
+          <div class="info">
+            <strong>Semana 1 <span>@Exibit</span></strong>
+            <p> Começaremos a nossa jornada aprendendo Javascript , HTML e CSS  , para 
+              acesar o conteudo clique nos quadrados abaixo: 
+            </p>
+            <aside class="profile"> 
+
+              <div class="widget images">
+            
+              </div>
+        
+          </aside>
+          <div class="links">
+           <a href=""><img src="./images/comments.svg" alt="Comentarios">3</a>
+           <a href=""><img src="./images/retweet.svg" alt="Retweet">4</a>
+           <a href=""><img src="./images/like.svg" alt="Likes">5</a>
+          </div>
+        </div>
+        </li>
+    
+
+  </section>
+
+
+  <aside class="widgets">
+      <div class="widget follow">
+        <div class="title">
+         <strong>Comunidades</strong>
+        </div>
+        <ul>
+          <li>
+              <div class="profile">
+                <img src="./images/rocks.jpg" alt="Avatar">
+                <div class="info">
+                  <strong>Rocketseat <span>@rocketseat</span></strong>
+                  <button> <a href="https://discord.com/invite/gCRAFhc"> Follow</a></button>
+                </div>
+              </div>
+            <a href="">x</a>
+          </li>
+        
+          <li>
+              <div class="profile">
+                <img src="./images/avatar.png" alt="Avatar">
+                <div class="info">
+                  <strong>Spade <span>@spade_be</span></strong>
+                  <button>Follow</button>
+                </div>
+              </div>
+            <a href="">x</a>
+          </li>
+      
+          <li class="last">
+              <div class="profile">
+                <img src="./images/avatar.png" alt="Avatar">
+                <div class="info">
+                  <strong>Spade <span>@spade_be</span></strong>
+                  <button>Follow</button>
+                </div>
+              </div>
+            <a href="">x</a>
+          </li>
+        </ul>
+
+        
+      </div>
+      <div class="widget trends">
+
+      </div>
+  </aside>
+
+
+
+
+
+</div>
+
+
+  </body>
+</html>
